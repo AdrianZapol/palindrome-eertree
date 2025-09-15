@@ -19,7 +19,7 @@ class PalindromeFinderEertreeTest {
     void setUp() {
         // Given
         finder = new PalindromeFinderEertree();
-        // Then (brak warunków do weryfikacji w setup)
+        // Then
     }
 
     @Nested
@@ -44,7 +44,6 @@ class PalindromeFinderEertreeTest {
         })
         void rejectsNonAlphanumeric(String input) {
             // Given
-            // input z niedozwolonym znakiem
 
             // When + Then
             assertThatThrownBy(() -> finder.findPalindromes(input))
@@ -69,7 +68,6 @@ class PalindromeFinderEertreeTest {
         @ValueSource(strings = {"", "a", "Z", "1", "ab", "1a"})
         void shortInputsReturnEmptyList(String input) {
             // Given
-            // krótkie wejście (< 3)
 
             // When
             List<String> result = finder.findPalindromes(input);
@@ -140,7 +138,6 @@ class PalindromeFinderEertreeTest {
         })
         void mixedAlphaNumericCases(String input, String expected1, String expected2) {
             // Given
-            // różne warianty znaków
 
             // When
             List<String> result = finder.findPalindromes(input);
